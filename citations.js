@@ -12,17 +12,14 @@ const base_citations = [
 
 ];
 
-
-
-base_citations[index][0];
-base_citations[index][1];
-
 const btn = document.querySelector("#button");
+const autor = document.querySelector('#autor');
+const answer = document.querySelector('#answer');
 
 btn.addEventListener('click', afficher);
 
 function afficher() {
     let index = Math.floor(Math.random() * (base_citations.length));
-    document.querySelector('#autor').innerHTML = base_citations[index][1];
-    document.querySelector('#answer').innerHTML = base_citations[index][0];
+    autor.innerHTML = base_citations[index][1];
+    answer.innerHTML = base_citations[index][0];
 }
