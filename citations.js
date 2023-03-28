@@ -12,21 +12,17 @@ const base_citations = [
 
 ];
 
-let index = Math.floor(Math.random() * (base_citations.length))
+
 
 base_citations[index][0];
 base_citations[index][1];
 
 const btn = document.querySelector("#button");
-// const text = document.querySelector("#answer");
-
 
 btn.addEventListener('click', afficher);
 
 function afficher() {
-    // text.textContent = '';
-    document.querySelector('#autor').innerHTML = cit1['autor'];
-    document.querySelector('#answer').innerHTML = cit1['citation'];
-    document.querySelector('#autor2').innerHTML = cit2['autor'];
-    document.querySelector('#answer2').innerHTML = cit2['citation'];
+    let index = Math.floor(Math.random() * (base_citations.length));
+    document.querySelector('#autor').innerHTML = base_citations[index][1];
+    document.querySelector('#answer').innerHTML = base_citations[index][0];
 }
