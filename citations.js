@@ -9,7 +9,6 @@ const base_citations = [
     ["« Fais de ta vie un rêve, et d’un rêve, une réalité. »", "Antoine de Saint Exupéry"],
     ["« Il faut faire de sa vie un chef d’œuvre. »", "Goethe"],
     ["« Là où il y a l’amour, il y a la vie. »", "Gandhi"],
-
 ];
 
 const btn = document.querySelector("#button");
