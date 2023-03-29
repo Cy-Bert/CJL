@@ -8,20 +8,34 @@
     <title>To-Do List</title>
     <script defer src="/todolist.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="/assets/img/ArcticonsOpentodolist.svg" type="image/x-icon" />
 </head>
 
 <body>
-    <h1 class="flex justify-center text-2xl font-bold">To-Do List</h1>
-    <div class="flex flex-row w-full">
-        <div class="border-2" id="todolist">
-            <div id="divareatodolist"></div>
+
+    <div class="flex flex-col sm:flex-row w-full">
+        <div class="border-2 rounded border-black m-2 p-2 sm:w-1/2  flex justify-center" >
+            <h2 class="font-bold text-2xl">To-Do List</h2>
+            <!-- Liste de taches #todolist -->
+            <div class="todolist"></div>
         </div>
-        <div class="flex flex-col">
-            <div class="border-2 " id="add">
-                <input type="text" id="textarea">
+        <div class="flex flex-col sm:w-1/2">
+            <div class="border-2 rounded border-black m-2 p-2 flex flex-col items-center" id="add">
+                <h2 class="font-bold text-2xl">Ajouter une tâche</h2>
+                <form class="flex flex-col items-center">
+                    <!-- Input #newtask -->
+                    <input class="border-2 rounded border-black my-3 p-1 w-full" id="newtask" type="text"
+                        placeholder="Entrez une nouvelle tâche" size="50" required title="Entrez une nouvelle tâche" />
+                    <!-- Bouton #add -->
+                    <input class="w-24 sm:w-48 p-2 rounded border-black shadow bg-cyan-400 text-white hover:bg-cyan-500"
+                        type="submit" value="Ajouter" title="Ajouter une tâche" id="add" />
+                </form>
             </div>
-            <button id="button">add</button>
-            <div class="border-2" id="done">c</div>
+            <div class="border-2 rounded border-black m-2 p-2 flex justify-center">
+                <h2 class="font-bold text-2xl">Tâches effectuées</h2>
+                <!-- Tâches effectuées #taskdone -->
+                <div id="taskdone"></div>
+            </div>
         </div>
     </div>
 </body>
