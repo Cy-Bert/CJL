@@ -1,6 +1,6 @@
-const text = document.querySelector('#textarea');
-const btn = document.querySelector('#button');
-const add = document.querySelector('#divareatodolist');
+const text = document.querySelector('#newtask');
+const btn = document.querySelector('#add');
+const add = document.querySelector('.todolist');
 
 btn.addEventListener('click', afficher);
 
@@ -13,5 +13,6 @@ function afficher() {
     div.innerHTML=note;
     add.appendChild(div);
     text.value="";
-}
 
+    const buttondone = document.createElement('buttondone');
+}
