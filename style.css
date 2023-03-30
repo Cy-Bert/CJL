@@ -1,0 +1,14 @@
+body {
+    font-family: helvetica;
+    font-weight: bold;
+    background: #833b7f;
+  }
+  
+  .bouton {
+    display: block;
+    margin: 2rem auto;
+  }
+  
+  p {
+    text-align: center;
+  } 
