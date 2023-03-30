@@ -1,10 +1,7 @@
-//bouton "done"
-const doneBtn = document.querySelector('.btn_done');
-//click sur le boutton done
-doneBtn.addEventListener('click', () => {
-    const task = doneBtn.parentNode;
-    //liste taches effectuées
-    const taskdown = document.querySelector('#taskdown ul');
+const text = document.querySelector('#newtask');
+const btn = document.querySelector('#add');
+const todolist = document.querySelector('#todolist');
+
 
 btn.addEventListener('click', afficher);
 
