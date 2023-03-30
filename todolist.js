@@ -1,5 +1,7 @@
-target.addEventListener(type, listener) 
 
+const text = document.querySelector('#newtask');
+const btn = document.querySelector('#add');
+const todolist = document.querySelector('#todolist');
 
 btn.addEventListener('click', afficher);
 
