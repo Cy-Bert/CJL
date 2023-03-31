@@ -65,15 +65,17 @@ grid.classList.add('max-w-7xl', 'my-10', 'mx-auto',"flex", "flex-wrap", 'justify
 game.appendChild(grid);
 
 gamegrid.forEach((item) => {
+  const name = item.name;
+  const img = item.img;
   const card = document.createElement('div');
   card.classList.add('card', 'relative', 'm-5','bg-contain',"w-40","h-32", 'transition-all', 'duration-300', 'ease-linear');
-  card.dataset.name = item.name;
+  card.dataset.name = name;
 
   const front = document.createElement('div');
-  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain');
+  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]');
 
   const back = document.createElement('div');
-  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]');
+  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url(' + img + ')]');
 
   grid.appendChild(card);
   card.appendChild(front);
@@ -83,7 +85,7 @@ gamegrid.forEach((item) => {
 const match = () => {
   const selected = document.querySelectorAll('.selected');
   selected.forEach((card) => {
-    card.classList.add('match', 'border-4', 'border-solid', 'border-red-500');
+    card.classList.add('match', 'bg-none');
   })
 };
 
@@ -91,36 +93,43 @@ const resetGuesses = () => {
   firstGuess = '';
   secondGuess = '';
   count = 0;
+  previousTarget = null;
 
   let selected = document.querySelectorAll('.selected');
   selected.forEach((card) => {
     card.classList.remove('selected');
-  })
+  });
 };
 
-grid.addEventListener('click', function (event) {
+grid.addEventListener('click', event => {
   let clicked = event.target;
-  if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected') || clicked.parentNode.classList.contains('match')) {
-    return;
+  if (
+    clicked.nodeName === 'SECTION' || 
+    clicked === previousTarget || 
+    clicked.parentNode.classList.contains('selected') ||
+     clicked.parentNode.classList.contains('match')
+     ) {
+      return;
   }
+
   if (count < 2) {
     count++;
     if (count === 1) {
       firstGuess = clicked.parentNode.dataset.name;
-      clicked.parentNode.classList.add('selected', 'border-2', 'border-solid', 'border-blue-500');
+      console.log(firstGuess);
+      clicked.parentNode.classList.add('selected');
     }
     else {
       secondGuess = clicked.parentNode.dataset.name;
-      clicked.parentNode.classList.add('selected', 'border-2', 'border-solid', 'border-blue-500');
+      console.log(secondGuess);
+      clicked.parentNode.classList.add('selected');
     }
     if (firstGuess && secondGuess) {
       if (firstGuess === secondGuess) {
         setTimeout(match, delay);
       }
-      else {
         setTimeout(resetGuesses, delay);
       }
-    }
     previousTarget = clicked;
   }
 });
