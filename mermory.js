@@ -72,10 +72,10 @@ gamegrid.forEach((item) => {
   card.dataset.name = name;
 
   const front = document.createElement('div');
-  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]');
+  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]', 'z-10');
 
   const back = document.createElement('div');
-  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url(' + img + ')]');
+  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url(' + img + ')]', 'rotate-180');
 
   grid.appendChild(card);
   card.appendChild(front);
