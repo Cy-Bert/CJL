@@ -61,19 +61,19 @@ let delay = 1200;
 const game = document.querySelector('#game');
 const grid = document.createElement('section');
 
-grid.classList.add('max-w-xl', 'my-0', 'mx-auto',"grid","grid-cols-6","grid-rows-6", 'justify-evenly','w-full',);
+grid.classList.add('max-w-7xl', 'my-10', 'mx-auto',"flex", "flex-wrap", 'justify-evenly');
 game.appendChild(grid);
 
 gamegrid.forEach((item) => {
   const card = document.createElement('div');
-  card.classList.add('card', 'relative', 'm-5','bg-contain', 'bg-no-repeat', 'bg-center', 'transition-all', 'duration-300', 'ease-linear');
+  card.classList.add('card', 'relative', 'm-5','bg-contain',"w-40","h-32", 'transition-all', 'duration-300', 'ease-linear');
   card.dataset.name = item.name;
 
   const front = document.createElement('div');
-  front.classList.add('front','absolute',"w-40","h-96", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain');
+  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain');
 
   const back = document.createElement('div');
-  back.classList.add('back','absolute',"w-40","h-96","bg-no-repeat", 'bg-[url("/assets/img/back.png")]');
+  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]');
 
   grid.appendChild(card);
   card.appendChild(front);
