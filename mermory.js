@@ -61,21 +61,22 @@ let delay = 1200;
 const game = document.querySelector('#game');
 const grid = document.createElement('section');
 
-grid.classList.add('max-w-7xl', 'my-10', 'mx-auto',"flex", "flex-wrap", 'justify-evenly');
+grid.setAttribute('class', 'grida');
 game.appendChild(grid);
 
 gamegrid.forEach((item) => {
   const name = item.name;
   const img = item.img;
   const card = document.createElement('div');
-  card.classList.add('card', 'relative', 'm-5','bg-contain',"w-40","h-32", 'transition-all', 'duration-300', 'ease-linear');
+  card.classList.add('card');
   card.dataset.name = name;
 
   const front = document.createElement('div');
-  front.classList.add('front','absolute',"w-40","h-32", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain', 'bg-[url("/assets/img/back.png")]',"bg-white", 'z-10');
+  front.classList.add('front');
 
   const back = document.createElement('div');
-  back.classList.add('back','absolute',"w-40","h-32",'bg-cover',"bg-no-repeat" ,'bg-center', 'bg-contain', 'bg-[url(' + img + ')]', 'rotate-180',"bg-white" );
+  back.classList.add('back');
+  back.style.backgroundImage = 'url(' + img + ')';
 
   grid.appendChild(card);
   card.appendChild(front);
@@ -85,7 +86,7 @@ gamegrid.forEach((item) => {
 const match = () => {
   const selected = document.querySelectorAll('.selected');
   selected.forEach((card) => {
-    card.classList.add('match', 'bg-none');
+    card.classList.add('match',);
   })
 };
 
