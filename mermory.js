@@ -1,11 +1,51 @@
 const cardsArray = [
   {
-    name: 'joker_red',
-    img: 'assets/img/JR.svg',
+    name: 'dog_01',
+    img: 'assets/img/chien01.png',
   },
   {
-    name: 'joker_noir',
-    img: 'assets/img/JN.svg',
+    name: 'dog_02',
+    img: 'assets/img/chien02.png',
+  },
+  {
+    name: 'dog_03',
+    img: 'assets/img/chien03.png',
+  },
+  {
+    name: 'dog_04',
+    img: 'assets/img/chien04.png',
+  },
+  {
+    name: 'dog_05',
+    img: 'assets/img/chien05.png',
+  },
+  {
+    name: 'dog_06',
+    img: 'assets/img/chien06.png',
+  },
+  {
+    name: 'dog_07',
+    img: 'assets/img/chien07.png',
+  },
+  {
+    name: 'dog_08',
+    img: 'assets/img/chien08.png',
+  },
+  {
+    name: 'dog_09',
+    img: 'assets/img/chien09.png',
+  },
+  {
+    name: 'dog_10',
+    img: 'assets/img/chien10.png',
+  },
+  {
+    name: 'dog_11',
+    img: 'assets/img/chien11.png',
+  },
+  {
+    name: 'dog_12',
+    img: 'assets/img/chien12.png',
   },
 ];
 
@@ -21,19 +61,19 @@ let delay = 1200;
 const game = document.querySelector('#game');
 const grid = document.createElement('section');
 
-grid.classList.add('grid', 'max-w-xl', 'my-0', 'mx-auto', 'flex', 'flex-wrap', 'justify-evenly');
+grid.classList.add('max-w-xl', 'my-0', 'mx-auto',"grid","grid-cols-6","grid-rows-6", 'justify-evenly','w-full',);
 game.appendChild(grid);
 
 gamegrid.forEach((item) => {
   const card = document.createElement('div');
-  card.classList.add('card', 'relative', 'm-5', 'bg-contain', 'bg-no-repeat', 'bg-center', 'w-48', 'h-64', 'transition-all', 'duration-300', 'ease-linear');
+  card.classList.add('card', 'relative', 'm-5','bg-contain', 'bg-no-repeat', 'bg-center', 'transition-all', 'duration-300', 'ease-linear');
   card.dataset.name = item.name;
 
   const front = document.createElement('div');
-  front.classList.add('front', 'w-48', 'h-64', 'absolute', 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain');
+  front.classList.add('front','absolute',"w-40","h-96", 'bg-cover', 'bg-no-repeat', 'bg-center', 'bg-contain');
 
   const back = document.createElement('div');
-  back.classList.add('back', 'w-48', 'h-64', 'absolute', 'bg-cover', 'bg-[url("/assets/img/dos.svg")]');
+  back.classList.add('back','absolute',"w-40","h-96","bg-no-repeat", 'bg-[url("/assets/img/back.png")]');
 
   grid.appendChild(card);
   card.appendChild(front);
